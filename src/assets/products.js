@@ -153,6 +153,7 @@ const prod11 = new Product(
   1,
   [
     'https://i.postimg.cc/HxGQcrcp/mock1.jpg',
+    'https://i.postimg.cc/HxGQcrcp/mock1.jpg',
     'https://i.postimg.cc/Y91Q1tYQ/mock2.jpg',
   ],
   ['Silver', 'Space Gray'],

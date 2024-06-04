@@ -6,10 +6,10 @@ function NavBar() {
     <>
       <header>
         <div className={styles["header-container"]}>
-          <a href="./" className={styles["header-logo"]}>
+          <a href="../" className={styles["header-logo"]}>
             <img
               className={styles["header-logo-img"]}
-              src="public\tiendamia-logo.svg"
+              src="..\public\tiendamia-logo.svg"
               width="218"
               alt="Logo store"
             />

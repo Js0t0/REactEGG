@@ -6,14 +6,16 @@ import "./index.css";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import NotFound from "./views/NotFound";
+import PreDetails from "./views/PreDetails";
 
 function App() {
   const browserRouter = createBrowserRouter([
     { path: "/", element: <Home /> },
-    { path: "/details", element: <Details /> },
+    { path: "/details/:id", element: <Details /> },
     { path: "/register", element: <NotFound /> },
     { path: "/notfound", element: <NotFound /> },
-    { path: "/*", element: <NotFound /> },
+    { path: "//:id", element: <PreDetails /> },
+    // { path: "/*", element: <NotFound /> },
     { path: "/cart", element: <Cart /> },
   ]);
   return (

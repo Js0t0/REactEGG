@@ -5,13 +5,13 @@ const ProductCard = (prop) => {
   const { id, title, price, color, image, description } = prop;
   return (
     <>
-      <Link className={styles["product-card"]} to={"./details"}>
+      <Link className={styles["product-card"]} to={"./details/" + id}>
         <img className={styles["product-img"]} src={image} alt={id} />
         <div className={styles["product-info"]}>
           <span className={styles["product-title"]}>{title}</span>
           <span className={styles["product-description"]}>{color}</span>
           <div className={styles["product-price-block"]}>
-            <span className={styles["product-price"]}>{price}</span>
+            <span className={styles["product-price"]}>${price}</span>
             <span className={styles["product-discount"]}>50% Off</span>
           </div>
           <div className={styles["product-tax-policy"]}>

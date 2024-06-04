@@ -1,76 +1,108 @@
 import styles from "./Details.module.css";
+import products from "../assets/products";
+import { useParams } from "react-router-dom";
 
 const PreDetails = (props) => {
-  const { id, title, price, color, image, description } = props;
+  const { id } = useParams();
+  const product = products.find((each) => each.id === id);
+
   return (
     <>
-      <div>{id}</div>
-      <div>{title}</div>
-      <div>{price}</div>
-      <div>{color}</div>
-      <div>{image}</div>
-      <div>{description}</div>
-      <div className={styles["details-container"]}>
-        <div className={styles["sales-block"]}>
-          <h2 className={styles["sales-title"]}>Week Sale</h2>
-          <div id="product-container" className={styles["product-container"]}>
-            <a className={styles["product-card"]} href="./details.html">
+      <div>{props.id}</div>
+      hola
+      <p>{id}</p>
+      <p>{product.images[0]}</p>
+      <main>
+        <div className={styles["details-container"]}>
+          <section className={styles["product-images-block"]}>
+            <div className={styles["product-images"]}>
               <img
-                className={styles["product-img"]}
-                src="https://i.postimg.cc/kX8PKZpq/ipad2.jpg"
-                alt="iPad Pro 12.9"
+                className={styles["mini-img"]}
+                src={product.images[1]}
+                alt="MacBook Pro 13'4"
               />
-              <div className={styles["product-info"]}>
-                <span className={styles["product-title"]}>iPad Pro 12.9</span>
-                <span className={styles["product-description"]}>Silver</span>
-                <div className={styles["product-price-block"]}>
-                  <span className={styles["product-price"]}>900000</span>
-                  <span className={styles["product-discount"]}>50% Off</span>
-                </div>
-                <div className={styles["product-tax-policy"]}>
-                  Incluye impuesto País y percepción AFIP
+              <img
+                className={styles["mini-img"]}
+                src={product.images[2]}
+                alt="MacBook Pro 13'4"
+              />
+            </div>
+            <img
+              className={styles["big-img"]}
+              id="big-img"
+              src={product.images[0]}
+              alt="MacBook Pro 13'4"
+            />
+          </section>
+          <div className={styles["product-description-block"]}>
+            <h1 className={styles["product-title"]}>{product.title}</h1>
+            <form className={styles["product-selector"]}>
+              <fieldset className={styles["product-fieldset"]}>
+                <label className={styles["product-label"]} htmlFor={"color"}>
+                  Color
+                </label>
+                <select
+                  className={styles["product-select"]}
+                  typeof="text"
+                  aria-placeholder="Selecciona un color"
+                  id="color"
+                >
+                  {/* <option value="Silver">Silver</option> */}
+                  {product.colors.map((i) => (
+                    <option value={i}>{i}</option>
+                  ))}
+
+                  {/* {product.colors.map(each=><option value={each}>{each}</option>)} */}
+                </select>
+              </fieldset>
+            </form>
+            <div className={styles["product-description"]}>
+              <span className={styles["product-label"]}>Descripción</span>
+              <p>{product.description}</p>
+            </div>
+          </div>
+          <div className={styles["product-checkout-block"]}>
+            <div className={styles["checkout-container"]}>
+              <span className={styles["checkout-total-label"]}>Total:</span>
+              <h2 id="price" className={styles["checkout-total-price"]}>
+                ${product.price}
+              </h2>
+              <p className={styles["checkout-description"]}>
+                Incluye impuesto PAIS y percepción AFIP. Podés recuperar AR$
+                50711 haciendo la solicitud en AFIP.
+              </p>
+              <ul className={styles["checkout-policy-list"]}>
+                <li>
+                  <span className={styles["policy-icon"]}>
+                    <img src="../public/truck.png" alt="Truck" />
+                  </span>
+                  <span className={styles["policy-desc"]}>
+                    Agrega el producto al carrito para conocer los costos de
+                    envío
+                  </span>
+                </li>
+                <li>
+                  <span className={styles["policy-icon"]}>
+                    <img src="../public/plane.png" alt="Plane" />
+                  </span>
+                  <span className={styles["policy-desc"]}>
+                    Recibí aproximadamente entre 10 y 15 días hábiles,
+                    seleccionando envío normal
+                  </span>
+                </li>
+              </ul>
+              <div className={styles["checkout-process"]}>
+                <div className={styles["top"]}>
+                  <input type="number" min="1" value="1" />
+                  <button type="button" className={styles["cart-btn"]}>
+                    Añadir al Carrito
+                  </button>
                 </div>
               </div>
-            </a>
-            <a className={styles["product-card"]} href="./details.html">
-              <img
-                className={styles["product-img"]}
-                src="https://i.postimg.cc/kX8PKZpq/ipad2.jpg"
-                alt="iPad Pro 12.9"
-              />
-              <div className={styles["product-info"]}>
-                <span className={styles["product-title"]}>iPad Pro 12.9</span>
-                <span className={styles["product-description"]}>Silver</span>
-                <div className={styles["product-price-block"]}>
-                  <span className={styles["product-price"]}>900000</span>
-                  <span className={styles["product-discount"]}>50% Off</span>
-                </div>
-                <div className={styles["product-tax-policy"]}>
-                  Incluye impuesto País y percepción AFIP
-                </div>
-              </div>
-            </a>
-            <a className={styles["product-card"]} href="./details.html">
-              <img
-                className={styles["product-img"]}
-                src="https://i.postimg.cc/kX8PKZpq/ipad2.jpg"
-                alt="iPad Pro 12.9"
-              />
-              <div className={styles["product-info"]}>
-                <span className={styles["product-title"]}>iPad Pro 12.9</span>
-                <span className={styles["product-description"]}>Silver</span>
-                <div className={styles["product-price-block"]}>
-                  <span className={styles["product-price"]}>900000</span>
-                  <span className={styles["product-discount"]}>50% Off</span>
-                </div>
-                <div className={styles["product-tax-policy"]}>
-                  Incluye impuesto País y percepción AFIP
-                </div>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };

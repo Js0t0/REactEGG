@@ -128,6 +128,16 @@
   padding: 0 10px 0 20px;
   box-sizing: border-box;
 }
+
+.remove-btn {
+  width: 100%;
+  background: #000000;
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+}
 .cart-btn {
   width: 100%;
   background: #ff3b3c;
