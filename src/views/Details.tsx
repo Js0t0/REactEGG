@@ -1,4 +1,3 @@
-import styles from "./Details.module.css";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import products from "../assets/products";
@@ -18,17 +17,19 @@ const Details = () => {
       <>
         <NavBar />
         <main>
-          <div className={styles["details-container"]}>
-            <div id="details" className={styles["columns-container"]}>
+          <div className="w-[1080px] flex flex-wrap justify-between">
+            <div id="details" className="flex justify-center flex-wrap">
               <Thumbs product={product} />
               <Description product={product} />
               <Checkout product={product} />
             </div>
-            <div className={styles["sales-block"]}>
-              <h2 className={styles["sales-title"]}>Ofertas de la semana</h2>
+            <div className="w-[1080px] flex flex-wrap my-[20px] mx-0 justify-center">
+              <h2 className="text-center text-[40px] font-semibold">
+                Ofertas de la semana
+              </h2>
               <div
                 id="product-container"
-                className={styles["product-container"]}
+                className="w-[1080px] flex flex-wrap justify-between "
               >
                 {onsale.map((i) => (
                   <ProductCard

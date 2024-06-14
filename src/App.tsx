@@ -6,7 +6,7 @@ import "./index.css";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import NotFound from "./views/NotFound";
-import PreDetails from "./views/PreDetails";
+
 import Onsale from "./views/Onsale";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     { path: "/details/:id", element: <Details /> },
     { path: "/register", element: <NotFound /> },
     { path: "/notfound", element: <NotFound /> },
-    { path: "//:id", element: <PreDetails /> },
+
     // { path: "/*", element: <NotFound /> },
     { path: "/cart", element: <Cart /> },
   ]);

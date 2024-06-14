@@ -9,9 +9,7 @@ function Home() {
     <>
       <NavBar />
       <Hero first={"tecnologia"} second={"renovada"} />
-      {/* <div className="w-full h-[50px] bg-[#FF5733] text-white text-center">
-        Hola
-      </div> */}
+
       <main className="w-full flex justify-center items-center p-[20px]">
         <div
           className="w-[1080px] flex flex-wrap justify-between"
